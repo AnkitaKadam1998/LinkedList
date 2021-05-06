@@ -28,14 +28,24 @@ class LinkedList5 {
     }    
   }
 
-  //Delete first node of the list
-  public void pop_front() {
+  //Delete last node of the list
+  public void pop_back() {
     if(this.head != null) {
-      Node temp = this.head;
-      this.head = this.head.next;
-      temp = null;  
+      if(this.head.next == null) {
+        this.head = null;
+      } else {
+        Node temp = new Node();
+        temp = this.head;
+        while(temp.next.next != null)
+          temp = temp.next;
+        Node lastNode = temp.next;
+        temp.next = null; 
+        lastNode = null;
+      }
     }
   }
+    
+  
 
   //display the content of the list
   public void PrintList() {
@@ -55,7 +65,7 @@ class LinkedList5 {
 };
 
 
-public class DeleteFirstElement{ 
+public class DeleteLastElement{ 
   public static void main(String[] args) {
     LinkedList MyList = new LinkedList();
 
@@ -67,7 +77,7 @@ public class DeleteFirstElement{
     MyList.PrintList(); 
 
     //Delete the first node
-    MyList.pop_front();
+    MyList.pop_back();
     MyList.PrintList();  
   }
 }
