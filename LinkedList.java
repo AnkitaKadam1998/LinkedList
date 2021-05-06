@@ -1,15 +1,15 @@
 import java.util.*;
 
-public class AppendList {
+public class insertList {
 	
 		public static void main(String args[])
 		{
 			LinkedList linkedList = new LinkedList<>();
-			linkedList.push(56);
-			linkedList.push(30);
 			linkedList.push(70);
+			linkedList.push(30);
+			linkedList.push(56);
 			
-			linkedList.append(0);
+			linkedList.insertAfter(linkedList.head.next,40);
 			linkedList.printList();
 		}
 	}
@@ -63,7 +63,18 @@ class LinkedList
 		}
 		last.next = newNode;
 	}
-}
+	public void insertAfter(Node prevNode,int data)
+		{
+			if(prevNode == null)
+			{
+				System.out.println("previous node should not be null");
+				return;
+			}
+			Node newNode = new Node(data);
+			newNode.next = prevNode.next;
+			prevNode.next =newNode;
+		 	}
+		}
 
 
 
