@@ -7,9 +7,9 @@ public class insertList {
 			LinkedList linkedList = new LinkedList();
 			linkedList.append(56);
 			linkedList.append(30);
+			linkedList.append(70);			
 			
-			
-			linkedList.insertAfter(linkedList.head.next, 70);
+			linkedList.insertAfter(linkedList.head.next, 40);
 			linkedList.printList();
 		
 		}
